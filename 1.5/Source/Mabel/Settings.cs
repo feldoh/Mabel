@@ -6,21 +6,21 @@ namespace Mabel;
 public class Settings : ModSettings
 {
     //Use Mod.settings.setting to refer to this setting.
-    public bool setting = true;
+    public bool destroyFloors = true;
 
     public void DoWindowContents(Rect wrect)
     {
-        var options = new Listing_Standard();
+        Listing_Standard options = new();
         options.Begin(wrect);
-        
-        options.CheckboxLabeled("Mabel_Settings_SettingName".Translate(), ref setting);
+
+        options.CheckboxLabeled("Mabel_Settings_DestroyFloors".Translate(), ref destroyFloors);
         options.Gap();
 
         options.End();
     }
-    
+
     public override void ExposeData()
     {
-        Scribe_Values.Look(ref setting, "setting", true);
+        Scribe_Values.Look(ref destroyFloors, "destroyFloors", true);
     }
 }

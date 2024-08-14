@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
     <Mabel_SettingsCategory>Mabel</Mabel_SettingsCategory>
-    <Mabel_Settings_SettingName>Some Setting</Mabel_Settings_SettingName>
+    <Mabel_Settings_DestroyFloors>Allow Mabel to Destroy floors</Mabel_Settings_DestroyFloors>
+    <Mabel_FloorDestructionMessage>Mabel has dug up the floor... again.</Mabel_FloorDestructionMessage>
 </LanguageData>
