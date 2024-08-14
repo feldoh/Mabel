@@ -5,7 +5,6 @@ namespace Mabel;
 
 public class Settings : ModSettings
 {
-    //Use Mod.settings.setting to refer to this setting.
     public bool destroyFloors = true;
 
     public void DoWindowContents(Rect wrect)

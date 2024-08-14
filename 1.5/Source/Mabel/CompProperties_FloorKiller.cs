@@ -38,14 +38,15 @@ public class CompFloorKiller : ThingComp
 
     public bool TryDestroyFloor()
     {
+        if (!MabelMod.settings.destroyFloors) return true; // If the setting is off, skip the destruction
         if (!CanDestroy) return false;
         IntVec3 cell = parent.Position;
         Map parentMap = parent.Map;
         if (parentMap == null || !parentMap.terrainGrid.CanRemoveTopLayerAt(cell)) return false;
         parentMap.terrainGrid.RemoveTopLayer(cell);
         FilthMaker.RemoveAllFilth(cell, parentMap);
-        FilthMaker.TryMakeFilth(cell, parentMap, ThingDefOf.Filth_Dirt, 2, FilthSourceFlags.Terrain);
-        FilthMaker.TryMakeFilth(cell, parentMap, ThingDefOf.Filth_Vomit, 1, FilthSourceFlags.Pawn);
+        FilthMaker.TryMakeFilth(cell.RandomAdjacentCell8Way(), parentMap, ThingDefOf.Filth_Dirt, 2, FilthSourceFlags.Terrain);
+        FilthMaker.TryMakeFilth(cell.RandomAdjacentCell8Way(), parentMap, ThingDefOf.Filth_Vomit, 1, FilthSourceFlags.Pawn);
         Messages.Message("Mabel_FloorDestructionMessage".Translate(parent.LabelShort), parent, MessageTypeDefOf.NegativeEvent, historical: false);
         return true;
     }
