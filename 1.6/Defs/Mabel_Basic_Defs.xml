@@ -8,6 +8,7 @@
       <MoveSpeed>5.0</MoveSpeed>
       <MarketValue>250</MarketValue>
       <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+      <Wildness>0</Wildness>
     </statBases>
     <tools>
       <li>
@@ -63,7 +64,6 @@
       <gestationPeriodDays>10</gestationPeriodDays>
       <nameOnTameChance>1</nameOnTameChance>
       <trainability>Advanced</trainability>
-      <wildness>0</wildness>
       <nuzzleMtbHours>12</nuzzleMtbHours>
       <soundEating>PredatorSmall_Eat</soundEating>
       <litterSizeCurve>
